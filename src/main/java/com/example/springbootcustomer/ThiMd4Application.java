@@ -1,4 +1,4 @@
-package com.codegym.thimd4;
+package com.example.springbootcustomer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

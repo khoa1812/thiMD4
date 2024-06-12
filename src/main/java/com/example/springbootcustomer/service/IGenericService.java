@@ -1,13 +1,15 @@
-package com.codegym.thimd4.service;
+package com.example.springbootcustomer.service;
 
 import java.util.Optional;
 
-public interface IGenerateService<T> {
+public interface IGenericService<T> {
     Iterable<T> findAll();
 
     Optional<T> findById(Long id);
 
-    void save(T t);
+    T save(T t);
 
     void remove(Long id);
+
+
 }

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="script.js"></script>
+</head>
+<body>
+
+    <form id="frm-search">
+        <div>
+            <input type="text" id="search-trans" name="type" placeholder="search"/>
+            <div>
+                <button type="button" onclick="showTransByType()">Search</button>
+                <button type="button" onclick="getAllTransaction()">Back</button>
+            </div>
+        </div>
+    </form>
+
+    <form id="frm-cName">
+        <select name="" id="cName-option">
+            <option value="1">Duc</option>
+            <option value="2">Quy</option>
+        </select>
+        <button type="button" onclick="showTransByCustomerName()">Submit</button>
+        <button type="button" onclick="getAllTransaction()">Back</button>
+    </form>
+
+    <button type="button" onclick="showFormCreate()">Add New Transaction</button>
+    <form style="display: none" id="form-create">
+        <input id="transId" type="text" placeholder="Enter TransId"> <br>
+        <select name="customer" id="customer">
+            <option value="1">Duc</option>
+            <option value="2">Quy</option>
+        </select> <br>
+        <input id="dot" type="text" placeholder="Enter Dot"> <br>
+        <input id="type" type="text" placeholder="Enter Type"> <br>
+        <input id="price" type="text" placeholder="Enter Price"> <br>
+        <input id="area" type="text" placeholder="Enter Area"> <br>
+        
+        <button type="button" onclick="createNewTrans()">Save</button>
+        <button onclick="getAllTransaction()">Cancel</button>
+    </form>
+
+    <table id="tb-head">
+        <thead >
+        <tr>
+            <th>Mã giao dịch</th>
+            <th>Tên khách hàng</th>
+            <th>Ngày giao dịch</th>
+            <th>Loại dịch vụ</th>
+            <th>Đơn giá</th>
+            <th>Diện tích</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody id="tb-trans">
+        </tbody>
+    </table>
+
+    <div id="delete-confirmation" style="display: none;">
+        <p>Are you sure you want to delete the following transaction?</p>
+        <p id="delete-trans-info"></p>
+        <button type="button" id="confirm-delete-button">Yes, delete</button>
+        <button onclick="window.location.href = 'index.html'">Cancel</button>
+    </div>
+</body>
+</html>
